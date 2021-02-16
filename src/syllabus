@@ -1,0 +1,180 @@
+List: data structure
+     1) simple  :  array
+     2) compound :    i linear  : list,stack.queue
+                      ii) non -linear : tree , graph
+
+ ===============================================================================
+ properties:
+ a) size should be dynamics
+ b) same type of elements,sequentially
+ =============================================================================
+ collection framework
+ =============================================================================
+ List : ArrayList, LinkedList
+ =============================================================================
+ Lined list :   forming by the addition of the  nodes.  It have non- continuous memory allocation
+
+
+                   Node : each element of data structure
+                   it have two parts
+                   in one part it have data
+                   in other part link to next node
+===========================================================================================================
+          Algorithms:
+                        Basic requirement of algorithm :
+                               1.every algorithm should have finite steps or should be properly defined.
+                               2.should always produce output
+
+
+                    Measures of an algo :
+                     a)  Time  complexity  ----- number of executions
+                             |                                                   b) Memory complexity -----
+                             |
+                          f(n) :  function on the input size
+                          n -> input size
+
+
+                     5 notation :
+                     O (Big - O)   , omega (Big - Omega) ,  theta(theta) ,  o(small-o) , w(small-omega)
+
+                     Big - O  :   upper wound
+                               1. constant time :  O(1)   --  O of 1
+                               2. linear time :  O(n)  O(n/2) // depends on the size of the input
+                               3. polynomial time : O(n) * O(n) --- O(n^2) // O(n^k)  |  O(m.n)
+                               4. logarithmic complexity : O(log(n) base 2)
+
+
+
+     Linked -list:
+        a) singly- linked list:
+                why not array?
+
+
+          i) size is fixed ( modification  insert / delete ) have O(n) complexity
+                    random access O(1)
+                    continuous memory allocation
+
+               solution :   linked list
+                 1) insert : add a node
+                        a) at the beginning O(1)
+                        b) at the end O(n)
+                                 if have tail O(1)
+                        c) in the middle O(n)
+
+                           no backward traversing is possible
+
+
+Polynomial representation :
+  1) by using array -- not possible bcz of the continuous memory allocation.
+  2) linked list
+
+
+  Stack :     LIFO
+  linear data structure
+  operation can only be performed on the head.
+
+  insert -- PUSH
+  delete -- POP
+  peek - fetching what node is stored at the head of a stack. // fetches the value at the
+      size of the stack is fixed.
+
+
+=================================Stack using array=======================================
+           top --> index[0,size-1]
+           push(45) --> array[top] = 45
+               top = top+1
+
+=================================Stack using linked list===================================
+
+
+Notations (evaluation of algebraic expression)
+     -in-fix
+     -pre-fix
+     -post-fix,
+
+
+   in-fix notation
+   <operand> < operator> < operand>
+                x+y     (((a+b)*c)/d)
+
+      per-fix                 post-fix
+       +ab                        ab+
+       +*/abcd                    abcd+*/
+       Polish notation (pre-fix)
+       Reverse polish notation (RPN)
+       post-fix
+
+       (a-( b/c+(d%e*f)/g)*h)
+
+   In-fix character                stack                 equivalent post-fix
+   -------------------         ---------------        -------------------------
+           (                         (
+           A                         (                          A
+           -                          (-                        A
+           (                          (-(                       A
+           B                          (-(                       AB
+           /                          (-(/                      AB
+           C                          (-(/                      ABC
+           +                          (-(+                      ABC/
+          (                            (-(+ (                   ABC/
+          D                           (-(+ (                     ABC/D
+          %                           (-(+(%                     ABC/D
+          E                           (-(+(%                     ABC/DE
+          *                           (-(+%*                     ABC/DE
+          f                           (-(+%*                     ABC/DEF
+
+
+
+
+
+
+
+  =================================================================================
+     Algorithm to convert an infix notation yo postfix notation (RPN)
+
+      Step 1 - Add ")" to the end of the infix expression.
+      Step 1 - Push "(" on the stack .
+      Step 3  - Repeat until each character in the infix notation is scanned.
+                  if a "(" is scanned ,push it onto the stack.
+                  if an operand (whether a digit or character ) is scanned ,add it to the postfix expression.
+
+                  a) repeatedly pop from the stack and add it to the postfix expression until a "(" is found .
+                  b) Discard the "(" , that is ,remove the "(" from the stack and do not add it to the  postfix expression
+
+       Step 4 - Repeatedly pop fro the stack an add it to the postfix expression until the stack is empty.
+       Step 5 - STOP.
+
+
+=============================================================================================================
+       Recursion
+       Principle of recursion
+
+       A problem is recursive (recursively solvable) then there should be at least the following conditions satisfied
+       from the problem statements.
+
+       1) The problem must have a trivial(simple) solution for a base case.
+       2)The problem is a repetitive of solving thee base case  over and over again by modifying the input or input size.
+       3) The function should call itself,while modifying the input and input size at each function call thus approaching
+       the base case eventually.
+
+
+    --------Stack frame
+    --------Activation Frame
+    --------Activation Record
+
+
+              ======================== Queue data structure===================
+
+              First In , First Out
+              Front                  Rear
+              1)Array
+              2)LinkedList
+
+
+              =========Queue using array======
+              Operation -->
+              1) insert - enqueue
+                     rear
+
+              2) delete - dequeue
+                    Front
